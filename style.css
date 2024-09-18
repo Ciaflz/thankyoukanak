@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f4f8; /* Soft background color */
+    font-family: 'Poppins', sans-serif;
+}
+
+.outer-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(15px); /* Stronger blur for a more dreamy look */
+    z-index: -2;
+}
+
+.blurred-box {
+    position: absolute;
+    width: 80%;
+    max-width: 800px;
+    height: 90%;
+    max-height: 600px;
+    background: rgba(255, 255, 255, 0.3); /* Transparent blurred box */
+    backdrop-filter: blur(10px); /* Creates the frosted-glass effect */
+    border-radius: 20px;
+    z-index: -1;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.95); /* Slight transparency */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    animation: fadeIn 1.5s ease-in-out;
+    max-width: 700px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+p.message {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #6A5ACD, #8A2BE2);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#specialMessage {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+    opacity: 1 !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
